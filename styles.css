@@ -1,0 +1,141 @@
+/* Base styles */
+body {
+  margin: 0;
+  padding: 0;
+  background-color: hsl(233, 47%, 7%);
+  font-family: 'Inter', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  background-color: hsl(244, 38%, 16%);
+  width: 1440px;
+  max-width: 90%;
+  border-radius: 1rem;
+  overflow: hidden;
+}
+
+/* Text Section */
+.text-blocks {
+  width: 50%;
+  padding: 3rem 2rem 1rem 7rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 2rem;
+  order: 1;
+  
+}
+
+.text-blocks h1 {
+  color: white;
+  font-family: 'Lexend Deca', sans-serif;
+  max-width: 19ch;
+  font-size: 2.5rem;
+  line-height: 1.2;
+  margin: 0;
+}
+
+.highlight {
+  color: hsl(277, 64%, 61%);
+}
+
+.text-blocks p {
+  color: hsla(0, 0%, 100%, 0.75);
+  font-size: 1rem;
+  line-height: 1.6;
+  max-width: 400px;
+}
+
+.stats-container {
+  display: flex;
+  align-items: center;
+  margin-top: 2rem;
+  gap: 4rem;
+}
+
+.stat h3 {
+  color: white;
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.stat p {
+  color: hsla(0, 0%, 100%, 0.6);
+  letter-spacing: 1px;
+  margin-top: 0.5rem;
+  font-size: 0.8rem;
+}
+
+/* Image Section */
+.image {
+  position: relative;
+  width: 50%;
+  overflow: hidden;
+  order: 2; 
+}
+
+.image::after {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background-color: hsl(277, 64%, 61%);
+  mix-blend-mode: multiply;
+  pointer-events: none;
+}
+
+.image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    width: 375px;
+  }
+
+  .image {
+    width: 100%;
+    height: 250px;
+    order: 1; /* Image FIRST on mobile */
+  }
+
+  .text-blocks {
+    width: 100%;
+    padding: 0;
+    text-align: center;
+    align-items: center;
+    order: 2; /* Text AFTER image on mobile */
+  }
+
+  .text-blocks h1 {
+    font-size: 1.5rem;
+    padding-top: 1rem;
+  }
+
+  .text-blocks p {
+    font-size: 1rem;
+  }
+
+  .stats-container {
+    flex-direction: column;
+    gap: 2rem;
+    margin-top: 2rem;
+  }
+
+  .stat {
+    padding: 10px;
+  }
+}
+
+  
